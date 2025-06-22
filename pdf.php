@@ -11,7 +11,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./src/css/pdf.css">
+     <title>Document</title>
+
+     <style>
+        
+
+        /* .table{
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        th, td{
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        } */
+
+     </style>
 </head>
 <body>
     <?php   
@@ -24,7 +41,7 @@
   
 ?>
 
-     <table>
+     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -32,7 +49,8 @@
                 <th>Apellido</th>
                 <th>Usuario</th>
                 <th>Fecha Creado</th>
-                <th>Fecha Actualizado</th>
+                <th>Registro</th>
+                <th>Actualizacion</th>
             </tr>
         </thead>
         <tbody>
@@ -50,7 +68,7 @@
                 <td><?php echo $usuario['usuario_actualizado']?></td>
             </tr>
             <?php }?>
-            <!-- Puedes duplicar y modificar más filas aquí -->
+            
         </tbody>
 </body>
 </html>
@@ -66,7 +84,7 @@
     use Dompdf\Dompdf;
 
     // instantiate and use the dompdf class
-    $dompdf = new Dompdf();
+    $dompdf = new Dompdf(['chroot' => __DIR__."/src/css/pdf.css"]);
 
   
     $dompdf->loadHtml($html);
