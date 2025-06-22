@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.btn{
+    background-color: black;
+    color:white;
+    padding: 1em;
+    border-radius: .5em;
+    margin: 1em;
+    text-decoration: none;
+    list-style: none;
+}
+
+.table{
+    border:  1px solid black;
+}
